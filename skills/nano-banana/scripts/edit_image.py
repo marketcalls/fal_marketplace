@@ -159,22 +159,25 @@ def main():
         epilog="""
 Examples:
   # Edit a single local image
-  python edit_image.py photo.png "Add a sunset in the background" output.png
+  python edit_image.py photo.png --prompt "Add a sunset in the background" --output output.png
 
   # Combine multiple images
-  python edit_image.py person.png car.png "Make the person driving the car" result.jpg
+  python edit_image.py person.png car.png --prompt "Make the person driving the car" --output result.jpg
 
   # Edit an image from URL
-  python edit_image.py https://example.com/image.png "Make it nighttime" output.png --resolution 2K
+  python edit_image.py https://example.com/image.png --prompt "Make it nighttime" --output output.png --resolution 2K
 
   # Combine with custom settings
-  python edit_image.py img1.png img2.png "Merge into one scene" out.webp --aspect-ratio 16:9 --format webp
+  python edit_image.py img1.png img2.png --prompt "Merge into one scene" --output out.webp --aspect-ratio 16:9 --format webp
+
+  # Short form
+  python edit_image.py photo.png -p "Add a sunset" -o output.png
         """
     )
 
     parser.add_argument("images", nargs="+", help="Input image paths or URLs (one or more)")
-    parser.add_argument("prompt", help="Text prompt describing the edits to apply")
-    parser.add_argument("output", nargs="?", help="Output file path (optional, prints URL if not provided)")
+    parser.add_argument("--prompt", "-p", required=True, help="Text prompt describing the edits to apply")
+    parser.add_argument("--output", "-o", help="Output file path (optional, prints URL if not provided)")
     parser.add_argument("--aspect-ratio", "-a", default="auto",
                         choices=["auto", "1:1", "21:9", "16:9", "3:2", "4:3", "5:4", "4:5", "3:4", "2:3", "9:16"],
                         help="Image aspect ratio (default: auto - maintains input dimensions)")
@@ -188,22 +191,6 @@ Examples:
                         help="Number of variations to generate (default: 1)")
 
     args = parser.parse_args()
-
-    # Separate images from prompt - last argument before output is the prompt
-    # If output is provided: images[:-1] is images, images[-1] is prompt
-    # We need to handle the case where output is optional
-
-    # The argparse setup should handle this correctly with nargs="+"
-    # images contains all positional args except prompt and output
-    # But we need to extract the output from images if it's there
-
-    # Actually, looking at the argparse setup:
-    # - images: nargs="+" captures one or more
-    # - prompt: single argument
-    # - output: nargs="?" optional
-
-    # So the structure is: script.py image1 [image2 ...] "prompt" [output]
-    # This should work correctly as defined
 
     edit_image(
         image_inputs=args.images,

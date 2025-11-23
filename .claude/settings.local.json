@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "Bash(echo $env:FAL_KEY)",
+      "Bash(pip show:*)",
+      "Bash(pip index:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
