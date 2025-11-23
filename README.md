@@ -4,27 +4,38 @@ The official fal.ai marketplace where developers can access AI-powered image gen
 
 ## Quick Start
 
+### Prerequisites
+
+First, install the required Python dependencies:
+
+```bash
+pip install fal-client requests Pillow
+```
+
 ### Standard Installation
-Run Claude Code and add the marketplace:
+
+**Step 1:** Add the marketplace in Claude Code:
 
 ```bash
 /plugin marketplace add https://github.com/marketcalls/fal_marketplace
 ```
 
-Then install the plugin:
+**Step 2:** Install the plugin:
 
 ```bash
-/plugin install fal-ai-image-gen
+/plugin install nano-banana-pro
 ```
+
+**Step 3:** **IMPORTANT - Restart Claude Code** to load the plugin.
 
 ### One-Command Installation
 Use the [Claude Plugins CLI](https://claude-plugins.dev) to skip the marketplace setup:
 
 ```bash
-npx claude-plugins install @marketcalls/fal_marketplace/fal-ai-image-gen
+npx claude-plugins install @marketcalls/fal_marketplace/nano-banana-pro
 ```
 
-This automatically adds the marketplace and installs the plugin in a single step.
+This automatically adds the marketplace and installs the plugin in a single step. **Remember to restart Claude Code after installation.**
 
 ---
 
@@ -64,7 +75,9 @@ or
 combine person.png and car.png to show the person driving the car
 ```
 
-## Setup
+## Setup Your API Key
+
+After installing the plugin, you need to configure your fal.ai API key:
 
 ### 1. Get Your API Key
 1. Sign up at [fal.ai](https://fal.ai/)
@@ -83,15 +96,9 @@ echo 'export FAL_KEY="your-api-key-here"' >> ~/.zshrc
 source ~/.zshrc
 ```
 
-### 3. Install Dependencies
+### 3. Restart Claude Code Again
 
-```bash
-pip install fal-client requests Pillow
-```
-
-### 4. Restart Claude Code
-
-After setting up your API key, restart Claude Code to load the plugin.
+After setting your API key, restart Claude Code one more time for the changes to take effect.
 
 ## Use Cases
 
@@ -118,7 +125,7 @@ After setting up your API key, restart Claude Code to load the plugin.
 
 ## Learn More
 
-For detailed documentation, prompting tips, and advanced usage examples, see the [plugin documentation](plugins/fal-ai-image-gen/README.md).
+For detailed documentation, prompting tips, and advanced usage examples, see the [plugin documentation](plugins/nano-banana-pro/README.md).
 
 ## Resources
 
