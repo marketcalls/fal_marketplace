@@ -6,7 +6,7 @@
   "plugins": [
     {
       "name": "fal-marketplace",
-      "source": ".",
+      "source": "./",
       "description": "Generate and edit images using fal.ai's Nano Banana models"
     }
   ]
