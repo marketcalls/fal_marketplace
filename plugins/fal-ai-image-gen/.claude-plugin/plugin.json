@@ -1,0 +1,21 @@
+{
+  "name": "fal-ai-image-gen",
+  "version": "1.0.0",
+  "description": "AI-powered image generation and editing using fal.ai's Nano Banana models. Create and edit images with natural language. Includes 1 skill.",
+  "author": {
+    "name": "MarketCalls",
+    "url": "https://github.com/marketcalls"
+  },
+  "homepage": "https://github.com/marketcalls/fal_marketplace",
+  "repository": "https://github.com/marketcalls/fal_marketplace",
+  "license": "MIT",
+  "keywords": [
+    "ai-powered",
+    "image-generation",
+    "fal-ai",
+    "nano-banana",
+    "image-editing",
+    "text-to-image",
+    "image-composition"
+  ]
+}
