@@ -1,0 +1,13 @@
+{
+  "name": "fal-marketplace",
+  "owner": {
+    "name": "marketcalls"
+  },
+  "plugins": [
+    {
+      "name": "fal-marketplace",
+      "source": ".",
+      "description": "Generate and edit images using fal.ai's Nano Banana models"
+    }
+  ]
+}
