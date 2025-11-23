@@ -1,3 +1,8 @@
+---
+name: nano-banana
+description: Generate and edit images using fal.ai's Nano Banana Pro model
+---
+
 # Nano Banana Image Generation (fal.ai)
 
 Generate and edit images using fal.ai's Nano Banana models. The environment variable `FAL_KEY` must be set.
