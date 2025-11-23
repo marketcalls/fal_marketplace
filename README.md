@@ -85,20 +85,43 @@ After installing the plugin, you need to configure your fal.ai API key:
 
 ### 2. Set Environment Variable
 
-**Windows (PowerShell):**
+#### Windows (PowerShell)
+
+**Permanent (Recommended):**
 ```powershell
 [System.Environment]::SetEnvironmentVariable('FAL_KEY','your-api-key-here','User')
 ```
+Then restart Claude Code for the changes to take effect.
 
-**macOS/Linux:**
+**Temporary (Current Session Only):**
+```powershell
+$env:FAL_KEY="your-api-key-here"
+```
+This will only last until you close the terminal.
+
+#### macOS/Linux
+
+**Permanent (Recommended):**
 ```bash
+# For Zsh (default on macOS)
 echo 'export FAL_KEY="your-api-key-here"' >> ~/.zshrc
 source ~/.zshrc
+
+# For Bash
+echo 'export FAL_KEY="your-api-key-here"' >> ~/.bashrc
+source ~/.bashrc
 ```
+Then restart Claude Code for the changes to take effect.
+
+**Temporary (Current Session Only):**
+```bash
+export FAL_KEY="your-api-key-here"
+```
+This will only last until you close the terminal.
 
 ### 3. Restart Claude Code Again
 
-After setting your API key, restart Claude Code one more time for the changes to take effect.
+After setting your API key permanently, restart Claude Code one more time for the changes to take effect.
 
 ## Use Cases
 
